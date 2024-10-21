@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
@@ -24,6 +24,7 @@ type UserFormValue = z.infer<typeof formSchema>;
 
 export default function UserAuthForm() {
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
   const defaultValues = {
     email: 'demo@gmail.com'
   };
@@ -33,10 +34,12 @@ export default function UserAuthForm() {
   });
 
   const onSubmit = async (data: UserFormValue) => {
-    signIn('credentials', {
-      email: data.email,
-      callbackUrl: '/dashboard'
-    });
+    router.push('/dashboard');
+
+    // signIn('credentials', {
+    //   email: data.email,
+    //   callbackUrl: '/dashboard'
+    // });
   };
 
   return (
