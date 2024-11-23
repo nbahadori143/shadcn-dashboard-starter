@@ -57,3 +57,13 @@ Follow these steps to clone the repository and start the development server:
 - `npm run dev`
 
 You should now be able to access the application at http://localhost:3000.
+
+### Quick Deploy
+
+To deploy this application instantly, click the button below:
+
+<p align="center">
+  <a href="https://www.cloud-station.io/template-store/next-shadcn-dashboard-starter">
+    <img src="https://server.cloud-station.io/cloudstation/Deploy_TO_CS.gif" alt="Deploy to CloudStation" width="250"">
+  </a>
+</p>
